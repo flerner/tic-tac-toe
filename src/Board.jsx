@@ -5,16 +5,20 @@ function Board({ xIsNext, squares, onPlay }) {
   // const [squares, setSquares] = useState(Array(9).fill(null));
   const winner = calculateWinner(squares);
   let status;
+  let statusClass = "player";
   if (winner) {
     status = "Winner: " + winner;
+    statusClass += "-winner";
   } else {
     status = "Next player: " + (xIsNext ? "X" : "O");
   }
   return (
     <>
-      <div class="player">{status}</div>
       <div class="board">
         <h1>Tic Tac Toe</h1>
+        <div class={statusClass}>
+          <h2>{status}</h2>
+        </div>
         <div class="board-row">
           <Square
             value={squares[0]}
