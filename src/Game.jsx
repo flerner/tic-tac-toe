@@ -30,9 +30,7 @@ function Game() {
     }
     return (
       <li key={move}>
-        <button onClick={() => jumpTo(move)}>
-          <span class="button-top">{description}</span>
-        </button>
+        <button onClick={() => jumpTo(move)}>{description}</button>
       </li>
     );
   });

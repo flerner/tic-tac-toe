@@ -1,5 +1,6 @@
 import Square from "./Square.jsx";
 import { useState } from "react";
+import confetti from "canvas-confetti";
 function Board({ xIsNext, squares, onPlay }) {
   // const [xIsNext, setIsNext] = useState(true);
   // const [squares, setSquares] = useState(Array(9).fill(null));
@@ -9,6 +10,7 @@ function Board({ xIsNext, squares, onPlay }) {
   if (winner) {
     status = "Winner: " + winner;
     statusClass += "-winner";
+    confetti();
   } else {
     status = "Next player: " + (xIsNext ? "X" : "O");
   }
